@@ -1,11 +1,11 @@
-package test;
+
 
 import dao.BaseDao;
 import util.DatabaseUtil;
 
 import java.sql.SQLException;
 
-public class T {
+public class t {
 
     public static void main(String[] args) throws SQLException {
         BaseDao b=new BaseDao(DatabaseUtil.getConnection());
