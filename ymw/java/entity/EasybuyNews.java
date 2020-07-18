@@ -1,11 +1,25 @@
 package entity;
 
-//新闻实体类
+/**
+ * @author 徐英杰
+ */
 public class EasybuyNews {
-    private Integer id;//主键
-    private String title;//新闻标题
-    private String content;//新闻内容
-    private String createTime;//新闻时间
+    /**
+     *  主键
+     */
+    private Integer id;
+    /**
+     *  新闻标题
+     */
+    private String title;
+    /**
+     *  新闻内容
+     */
+    private String content;
+    /**
+     *  新闻创建时间
+     */
+    private String createTime;
 
     public Integer getId() {
         return id;
