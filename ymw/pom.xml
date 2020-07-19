@@ -17,6 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+
   </properties>
 
   <dependencies>
@@ -44,6 +45,8 @@
           <version>5.1.26</version>
           <scope>compile</scope>
       </dependency>
+
+
   </dependencies>
 
 
@@ -118,25 +121,27 @@
 
       </plugins>
     </pluginManagement>
+
+      <resources>
+          <resource>
+              <directory>src/main/resources</directory>
+              <includes>
+                  <include>**/*.properties</include>
+                  <include>**/*.xml</include>
+                  <include>**/*.tld</include>
+              </includes>
+              <filtering>false</filtering>
+          </resource>
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.properties</include>
+                  <include>**/*.xml</include>
+                  <include>**/*.tld</include>
+              </includes>
+              <filtering>false</filtering>
+          </resource>
+      </resources>
   </build>
-    <resources>
-        <resource>
-            <directory>src/main/resources</directory>
-            <includes>
-                <include>**/*.properties</include>
-                <include>**/*.xml</include>
-                <include>**/*.tld</include>
-            </includes>
-            <filtering>false</filtering>
-        </resource>
-        <resource>
-            <directory>src/main/java</directory>
-            <includes>
-                <include>**/*.properties</include>
-                <include>**/*.xml</include>
-                <include>**/*.tld</include>
-            </includes>
-            <filtering>false</filtering>
-        </resource>
-    </resources>
+
 </project>
