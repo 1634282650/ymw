@@ -1,6 +1,7 @@
 package test;
 
 import dao.BaseDao;
+import util.ConfigManager;
 import util.DatabaseUtil;
 
 import java.sql.ResultSet;
@@ -15,6 +16,7 @@ public class DataTest {
             BaseDao b=new BaseDao(DatabaseUtil.getConnection());
             ResultSet resultSet = b.executeQuery("SELECT * FROM `easybuy_news`;");
             if(resultSet.next()){
+                System.out.println(  ConfigManager.getProperty("url"));
                 System.out.println(resultSet.getInt(1));
             }
 

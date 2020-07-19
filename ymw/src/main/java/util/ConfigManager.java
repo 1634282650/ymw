@@ -10,7 +10,7 @@ public class ConfigManager {
     static {
         InputStream is = null;
         is = ConfigManager.class.getClassLoader().getResourceAsStream(
-                "src/main/database.properties");
+                "database.properties");
         if (is == null) {
             throw new RuntimeException("找不到数据库参数配置文件！");
         }
