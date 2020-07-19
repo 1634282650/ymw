@@ -1,6 +1,4 @@
 package dx;
-import dx.database.*;
-import dxhualuo.io.Path;
 import util.ConfigManager;
 
 /**
@@ -8,6 +6,6 @@ import util.ConfigManager;
  */
 public class Run {
     public static void main(String[] args) {
-        System.out.println(Path.getSrcPath());
+        System.out.println(ConfigManager.getProperty("url"));
     }
 }

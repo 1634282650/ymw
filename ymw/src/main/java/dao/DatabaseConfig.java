@@ -1,7 +1,7 @@
 package dao;
 
 /**
- *  配置
+ *  数据库配置文件
  * @author dx_hualuo
  */
 public class DatabaseConfig {
