@@ -1,5 +1,8 @@
 package entity;
-//订单类
+/**
+ *  订单类
+ * @author 徐英杰
+ */
 public class EasybuyOrder {
     private Integer id;//订单id
     private Integer userId;//用户主键

@@ -1,5 +1,11 @@
 package entity;
-//用户类
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+/**
+ * @author 徐英杰
+ */ //用户类
 public class EasybuyUser {
     private Integer id;//主键
     private String loginName;//登录名
@@ -81,5 +87,30 @@ public class EasybuyUser {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+
+    /**
+     *  已经调用过next方法的ResultSet可以通过此方法来初始化一个实体并赋值
+     * @param rs 结果集
+     * @return 实体类对象
+     * @author dx_hualuo
+     */
+    public static EasybuyUser readResultSet(ResultSet rs){
+        EasybuyUser user = new EasybuyUser();
+        try {
+            user.setId(rs.getInt("id"));
+            user.setLoginName(rs.getString("loginName"));
+            user.setUserName(rs.getString("userName"));
+            user.setPassword(rs.getString("password"));
+            user.setSex(rs.getInt("sex"));
+            user.setIdentityCode(rs.getString("identityCode"));
+            user.setEmail(rs.getString("email"));
+            user.setMobile(rs.getString("mobile"));
+            user.setType(rs.getInt("type"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 }
