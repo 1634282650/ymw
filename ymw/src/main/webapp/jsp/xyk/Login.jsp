@@ -17,14 +17,10 @@
     <![endif]-->
     <script type="text/javascript" src="/js/jquery-1.11.1.min_044d0927.js"></script>
     <script type="text/javascript" src="/js/jquery.bxslider_e88acd1b.js"></script>
-
     <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
-
     <script type="text/javascript" src="/js/select.js"></script>
-
     <script type="text/javascript" src="/js/lrscroll.js"></script>
-
     <script type="text/javascript" src="/js/iban.js"></script>
     <script type="text/javascript" src="/js/fban.js"></script>
     <script type="text/javascript" src="/js/f_ban.js"></script>
@@ -32,18 +28,20 @@
     <script type="text/javascript" src="/js/bban.js"></script>
     <script type="text/javascript" src="/js/hban.js"></script>
     <script type="text/javascript" src="/js/tban.js"></script>
-
     <script type="text/javascript" src=/js/lrscroll_1.js"></script>
-
-
-    <title>尤洪</title>
+    <title>易买网登录</title>
+    <script>
+        function topLoginLinkClick() {
+            alert("您当前就在登录页面。请完善信息！");
+        }
+    </script>
 </head>
 <body>
 <!--Begin Header Begin-->
 <div class="soubg">
     <div class="sou">
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp; </span>
+        	<span class="fl">你好，请<a href="" onclick="topLoginLinkClick()">登录</a>&nbsp; <a href="/jsp/xyk/Register.jsp" style="color:#ff4e00;">免费注册</a>&nbsp; </span>
             <span class="fl">|&nbsp;关注我们：</span>
             <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
             <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="/images/s_tel.png" align="absmiddle" /></a></span>
@@ -54,7 +52,7 @@
 <!--Begin Login Begin-->
 <div class="log_bg">
     <div class="top">
-        <div class="logo"><a href="Index.html"><img src="/images/logo.png" /></a></div>
+        <div class="logo"><a href="/jsp/xyj/Index.jsp"><img src="/images/logo.png" /></a></div>
     </div>
     <div class="login">
         <div class="log_img"><img src="/images/l_img.png" width="611" height="425" /></div>
