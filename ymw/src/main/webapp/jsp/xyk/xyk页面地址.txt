@@ -1,0 +1,2 @@
+1、登录页面      /jsp/xyk/Login.jsp
+2、注册页面      /jsp/xyk/Register.jsp
