@@ -59,7 +59,7 @@ public class BaseDao {
      * @return 查询结果集
      * @throws SQLException 
      */
-    protected ResultSet executeQuery(String sql, Object... params) throws SQLException {
+    public ResultSet executeQuery(String sql, Object... params) throws SQLException {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {

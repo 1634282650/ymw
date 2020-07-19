@@ -1,13 +1,26 @@
+package test;
+
+import dao.BaseDao;
+import util.DatabaseUtil;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 //测试类
 public class DataTest {
 
     public static void main(String[] args) {
-        System.out.println("测试");
-        HashMap<Integer, String> objectObjectHashMap = new HashMap<Integer, String>();
-        objectObjectHashMap.put(1,"admin");
-        objectObjectHashMap.remove("admin");
-        System.out.println(objectObjectHashMap.size());
+        try {
+            BaseDao b=new BaseDao(DatabaseUtil.getConnection());
+            ResultSet resultSet = b.executeQuery("SELECT * FROM `easybuy_news`;");
+            if(resultSet.next()){
+                System.out.println(resultSet.getInt(1));
+            }
+
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
