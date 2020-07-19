@@ -11,4 +11,5 @@ public class DatabaseConfig {
     public static String database = "easybuy";
     public static String userName = "dx_hualuo";
     public static String password = "11551155";
+
 }
