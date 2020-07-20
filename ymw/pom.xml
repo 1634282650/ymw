@@ -117,9 +117,15 @@
                   <source>1.8</source>
                   <target>1.8</target>
                   <encoding>utf-8</encoding>
-                  <compilerArguments>
-                      <extdirs>${project.basedir}/src/main/resources/lib</extdirs>
-                  </compilerArguments>
+                  <compilerArgs>
+                      <arg>-verbose</arg>
+                      <arg>-Xlint:unchecked</arg>
+                      <arg>-Xlint:deprecation</arg>
+                      <arg>-bootclasspath</arg>
+                      <arg>${env.JAVA_HOME}/jre/lib/rt.jar</arg>
+                      <arg>-extdirs</arg>
+                      <arg>${project.basedir}/src/main/webapp/WEB-INF/lib</arg>
+                  </compilerArgs>
               </configuration>
           </plugin>
 
