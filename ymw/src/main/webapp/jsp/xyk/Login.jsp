@@ -35,6 +35,7 @@
         function topLoginLinkClick() {
             alert("您当前就在登录页面。请完善信息！");
         }
+        //提交方法
         function submitFunction() {
             let userName = $("#userName").val();
             let password = $("#password").val();
@@ -42,27 +43,46 @@
                 userName = userName.replace(/^\s+|\s+$/g,"");
                 if(password != null && password.replace(/^\s+|\s+$/g,"").length !== 0){
                     password = password.replace(/^\s+|\s+$/g,"");
-                    $.ajax({
-                        url:"/jsp/xyk/LoginService.jsp",
-                        dataType:"application/json",
-                        type:"POST",
-                        data:{"userName":userName,"password":password},
-                        success:function(userInfo){
-                            if(userInfo.userName === true && userInfo.password === true){
-                                window.location.href = "<%=Path.getSrcPath()%>/jsp/xyj/Index.jsp";
-                            }else if(userInfo.userName === false){
-                                alert("用户名不存在或者有误，请重新输入！");
-                            }else if(userInfo.password === false){
-                                alert("密码错误，请重试！")
-                            }
-                        }
+                    $.post("/loginServlet",{"userName":userName,"password":password},function (data) {
+                        alert(data);
                     });
+                    <%--$.ajax({--%>
+                    <%--    url:"localhost:8081/loginServlet",--%>
+                    <%--    dataType:"application/json",--%>
+                    <%--    type:"POST",--%>
+                    <%--    data:{"userName":userName,"password":password},--%>
+                    <%--    success:function(userInfo){--%>
+                    <%--        if(userInfo.userName === true && userInfo.password === true){--%>
+                    <%--            window.location.href = "<%=Path.getSrcPath()%>/jsp/xyj/Index.jsp";--%>
+                    <%--        }else if(userInfo.userName === false){--%>
+                    <%--            alert("用户名不存在或者有误，请重新输入！");--%>
+                    <%--        }else if(userInfo.password === false){--%>
+                    <%--            alert("密码错误，请重试！")--%>
+                    <%--        }--%>
+                    <%--    }--%>
+                    <%--});--%>
                 }
                 else{
                     alert("密码不能为空和空白字符");
                 }
             }else{
                 alert("用户名不能为空和空白字符");
+            }
+        }
+        //回车提交
+        function enterCommit(key){
+            let keyNum;
+            if(window.event) // 辣鸡IE
+            {
+                keyNum = key.keyCode;
+            }
+            else if(key.which)
+            {
+                keyNum = key.which;
+            }
+            //按下回车键
+            if(keyNum === 13){
+                submitFunction();
             }
         }
     </script>
@@ -99,11 +119,11 @@
                     </tr>
                     <tr height="70">
                         <td>用户名</td>
-                        <td><input type="text" value="" class="l_user" id="userName" name="userName" /></td>
+                        <td><input type="text" value="" class="l_user" id="userName" onkeydown="return enterCommit(event)" name="userName" /></td>
                     </tr>
                     <tr height="70">
                         <td>密&nbsp; &nbsp; 码</td>
-                        <td><input type="password" value="" class="l_pwd" id="password" name="password" /></td>
+                        <td><input type="password" value="" class="l_pwd" onkeydown="return enterCommit(event)" id="password" name="password" /></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
