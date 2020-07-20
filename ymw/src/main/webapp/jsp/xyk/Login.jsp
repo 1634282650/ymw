@@ -1,4 +1,4 @@
-<%@ page import="dx.database.DataCache" %><%--
+<%@ page import="dxhualuo.io.Path" %><%--
   Created by IntelliJ IDEA.
   User: admin
   Date: 2020/7/19
@@ -49,7 +49,7 @@
                         data:{"userName":userName,"password":password},
                         success:function(userInfo){
                             if(userInfo.userName === true && userInfo.password === true){
-                                window.location.href = "<%=DataCache.root%>/jsp/xyj/Index.jsp";
+                                window.location.href = "<%=Path.getSrcPath()%>/jsp/xyj/Index.jsp";
                             }else if(userInfo.userName === false){
                                 alert("用户名不存在或者有误，请重新输入！");
                             }else if(userInfo.password === false){

@@ -1,6 +1,7 @@
-<%@ page import="dx.service.UserService" %>
+<%@ page import="dxhualuo.service.UserService" %>
 <%@ page import="entity.EasybuyUser" %>
-<%@ page contentType="application/json;charset=UTF-8" language="Java" %>
+<%@ page contentType="application/json;charset=UTF-8" language="java" %>
+
 <%
     String userName = request.getParameter("userName");
     String password = request.getParameter("password");
@@ -26,6 +27,4 @@
             out.print("{userName:false}");
         }
     }
-
-
 %>
